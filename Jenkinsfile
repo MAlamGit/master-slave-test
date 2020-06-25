@@ -8,9 +8,9 @@ pipeline {
                 echo 'Building..'
                 sh '''	echo  "stage-01 steps" 
 				
-				cd /opt/
-				chmod -R 777 /opt
-				mkdir slave-build
+				cd /opt/alam-workspace
+				chmod a+x test.sh
+				./test.sh
 				'''
             }
         }
@@ -22,9 +22,10 @@ pipeline {
                 sh '''	
 				
 				echo  "stage-02 steps " 
-				cd /opt/
-				chmod -R 777 /opt
-				mkdir slave-test
+				cd /opt/alam-workspace
+				chmod a+x test.sh
+				./test.sh
+				
 				'''
             }
         }
