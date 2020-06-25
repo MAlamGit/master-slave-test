@@ -23,7 +23,7 @@ pipeline {
 				
 				echo  "stage-02 steps " 
 				cd /opt/alam-workspace
-				 chmod u+x 777 test.sh
+				 chmod u+x test.sh
 				./test.sh
 				
 				'''
