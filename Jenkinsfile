@@ -1,9 +1,9 @@
 pipeline {
-	agent { label env.Slave }
+	agent none
 
     stages {
         stage('stage-01') {
-            
+            agent { label env.SLAVE_REDHAT }
             steps {
                 echo 'Building..'
                 sh '''	echo  "stage-01 steps" 
@@ -16,7 +16,7 @@ pipeline {
         }
 		
 		stage('stage-02') {
-            
+            agent { label env.SLAVE_UBUNTU }
             steps {
                 echo 'Testing..'
                 sh '''	
