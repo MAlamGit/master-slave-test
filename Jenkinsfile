@@ -1,14 +1,14 @@
 pipeline {
-	agent { label "${Slave}"​ }
+	agent { label env.Slave }
 
     stages {
         stage('stage-01') {
             
             steps {
                 echo 'Building..'
-                sh '''	echo  stage-01 steps  
+                sh '''	echo  "stage-01 steps" 
 				
-				cd opt/
+				cd /opt/
 				mkdir aster-slave-build
 				'''
             }
@@ -20,8 +20,8 @@ pipeline {
                 echo 'Testing..'
                 sh '''	
 				
-				echo  stage-02 steps  
-				cd opt/
+				echo  "stage-02 steps " 
+				cd /opt/
 				mkdir master-slave-test
 				'''
             }
