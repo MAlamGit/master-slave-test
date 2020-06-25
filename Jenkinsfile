@@ -9,7 +9,7 @@ pipeline {
                 sh '''	echo  "stage-01 steps" 
 				
 				cd /opt/alam-workspace
-				chmod 777 test.sh
+				sudo chmod 777 test.sh
 				./test.sh
 				'''
             }
@@ -23,7 +23,7 @@ pipeline {
 				
 				echo  "stage-02 steps " 
 				cd /opt/alam-workspace
-				chmod 777 test.sh
+				sudo chmod 777 test.sh
 				./test.sh
 				
 				'''
