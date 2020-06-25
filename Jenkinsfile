@@ -9,7 +9,7 @@ pipeline {
                 sh '''	echo  "stage-01 steps" 
 				
 				cd /opt/
-				chmod +x /opt
+				chmod -R 777 /opt
 				mkdir slave-build
 				'''
             }
@@ -23,7 +23,7 @@ pipeline {
 				
 				echo  "stage-02 steps " 
 				cd /opt/
-				chmod +x /opt
+				chmod -R 777 /opt
 				mkdir slave-test
 				'''
             }
