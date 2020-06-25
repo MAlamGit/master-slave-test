@@ -9,7 +9,7 @@ pipeline {
                 sh '''	echo  "stage-01 steps" 
 				
 				cd /opt/
-				mkdir aster-slave-build
+				mkdir slave-build
 				'''
             }
         }
@@ -22,7 +22,7 @@ pipeline {
 				
 				echo  "stage-02 steps " 
 				cd /opt/
-				mkdir master-slave-test
+				mkdir slave-test
 				'''
             }
         }
