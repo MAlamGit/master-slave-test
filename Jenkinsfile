@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'master'}
+	agent { label 'ss-prod-master'}
 
     stages {
         stage('stage-01') {
