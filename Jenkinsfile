@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('stage-01') {
-            agent { label env.SLAVE_REDHAT }
+            agent { label env.FDC_SLAVE01 }
             steps {
                 echo 'Building..'
                 sh '''	echo  "stage-01 steps" 
@@ -16,7 +16,7 @@ pipeline {
         }
 		
 		stage('stage-02') {
-            agent { label env.SLAVE_UBUNTU }
+            agent { label env.FDC_SLAVE02 }
             steps {
                 echo 'Testing..'
                 sh '''	
