@@ -1,0 +1,25 @@
+pipeline {
+	agent { label 'fdc-jenkins'}
+
+    stages {
+        stage('stage-01') {
+            agent none
+            steps {
+                echo 'Building..'
+                sh '''	echo  "stage-01 steps" 
+				
+				cd /opt/alam-workspace
+				chmod u+x test.sh
+				./test.sh
+				'''
+            }
+        }
+		
+	}
+
+    post {
+        success {
+            echo 'This will run only if successful'
+        }
+    }
+}
