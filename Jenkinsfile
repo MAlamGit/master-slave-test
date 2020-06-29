@@ -19,8 +19,7 @@ pipeline {
                 sh '''	
 				echo  "fdc-jenkins Jenkinsfile executing started......"  '''
 				
-				String jenkinsFile_ssProdMaster = fdc-jenkins/Jenkinsfile
-				load 'jenkinsFile_fdcJenkins'
+				load 'fdc-jenkins/Jenkinsfile'
             }
         }
 
