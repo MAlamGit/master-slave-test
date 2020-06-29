@@ -1,32 +1,14 @@
-pipeline {
-	agent any
+node {
+    stage('Shared') {
+        echo 'Shared stage'
 
-    stages {
-
-		stage('ss-prod-master') {
-            agent { label 'ss-prod-master' }
-            steps {
-                sh '''	echo  "ss-prod-master Jenkinsfile executing started....."  '''
-				
-				load 'ss-prod-master/Jenkinsfile'
-            }
-        }
-		
-		
-		stage('fdc-jenkins') {
-            agent { label 'fdc-jenkins' }
-            steps {
-                sh ''' echo  "fdc-jenkins Jenkinsfile executing started......"  '''
-				
-				load 'fdc-jenkins/Jenkinsfile'
-            }
-        }
-
+        checkout scm
     }
 
-    post {
-        success {
-            echo 'This will run only if successful'
-        }
+    if (env.JOB_NAME == 'ss-prod-master') {
+        load 'ss-prod-master/Jenkinsfile'
+    } 
+	else if (env.JOB_NAME == 'fdc-jenkins') {
+        load 'fdc-jenkins/Jenkinsfile'
     }
 }
