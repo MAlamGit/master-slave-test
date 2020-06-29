@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
     stages {
-        if (env.SS_PROD_FDC_PIPELINE == 'ss-prod-master'){
+
 		stage('ss-prod-master Jenkinsfile executing started') {
             agent { label 'ss-prod-master' }
             steps {
@@ -11,9 +11,8 @@ pipeline {
 				load 'ss-prod-master/Jenkinsfile'
             }
         }
-		}
 		
-		if (env.SS_PROD_FDC_PIPELINE == 'fdc-jenkins'){
+		
 		stage('fdc-jenkins Jenkinsfile executing started') {
             agent { label 'fdc-jenkins' }
             steps {
@@ -24,7 +23,7 @@ pipeline {
 				load 'jenkinsFile_fdcJenkins'
             }
         }
-		}
+
     }
 
     post {
