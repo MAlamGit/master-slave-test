@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-		stage('ss-prod-master Jenkinsfile executing started') {
+		stage('ss-prod-master) {
             agent { label 'ss-prod-master' }
             steps {
                 sh '''	echo  "ss-prod-master Jenkinsfile executing started....."  '''
@@ -13,7 +13,7 @@ pipeline {
         }
 		
 		
-		stage('fdc-jenkins Jenkinsfile executing started') {
+		stage('fdc-jenkins') {
             agent { label 'fdc-jenkins' }
             steps {
                 sh ''' echo  "fdc-jenkins Jenkinsfile executing started......"  '''
