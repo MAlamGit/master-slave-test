@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('stage-01') {
-            agent { label env.FDC_SLAVE01 }
+            agent { label 'ss-prod-fdc-slave-1' }
             steps {
                 echo 'Building..'
                 sh '''	echo  "stage-01 steps" 
@@ -16,7 +16,7 @@ pipeline {
         }
 		
 		stage('stage-02') {
-            agent { label env.FDC_SLAVE02 }
+            agent { label 'ss-prod-fdc-slave-2' }
             steps {
                 echo 'Testing..'
                 sh '''	
