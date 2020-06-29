@@ -9,8 +9,8 @@ agent any
 						
                             sh 'ss-prod-master Jenkinsfile executing started......'
 							
-							String jenkinsFile_ssProdMaster = /ss-prod-master/Jenkinsfile
-							load jenkinsFile_ssProdMaster
+							load 'ss-prod-master/Jenkinsfile'
+							
                         }
                     }
 					
@@ -19,8 +19,8 @@ agent any
 						
                             sh 'fdc-jenkins Jenkinsfile executing started......'
 							
-							String jenkinsFile_ssProdMaster = /ss-prod-master/Jenkinsfile
-							load jenkinsFile_fdcJenkins
+							String jenkinsFile_ssProdMaster = ss-prod-master/Jenkinsfile
+							load 'jenkinsFile_fdcJenkins'
                         }
                     }
                 }
