@@ -6,11 +6,11 @@ node {
         checkout scm
     }
 
-    if (env.JOB_NAME == 'prod-slaves') {
+    if (env.ENV == 'prod-slaves') {
         load 'prod-slaves/Jenkinsfile'
     } 
 	
-	else if (env.JOB_NAME == 'non-prod') {
+	else if (env.ENV == 'non-prod') {
         load 'non-prod/Jenkinsfile'
     }
 }
