@@ -1,3 +1,4 @@
+
 node {
     stage('Shared') {
         echo 'Shared stage'
