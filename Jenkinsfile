@@ -7,9 +7,9 @@ node {
     }
 
     if (env.JOB_NAME == 'ss-prod-master') {
-        load 'ss-prod-master/Jenkinsfile'
+        load 'prod-slaves/Jenkinsfile'
     } 
 	else if (env.JOB_NAME == 'fdc-jenkins') {
-        load 'fdc-jenkins/Jenkinsfile'
+        load 'non-prod/Jenkinsfile'
     }
 }
